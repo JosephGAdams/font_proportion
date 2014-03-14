@@ -8,13 +8,10 @@ import string
 class code:
 
     def main(self):
-        letter_list = []
+        letter_list = [x for x in string.letters]
+        letter_list.extend([x for x in string.punctuation])
         det_list = []
         true_type_font = "Courier_New.ttf"
-        for each in string.letters:
-            letter_list.append(each)
-        for each in string.punctuation:
-            letter_list.append(each)
         for each in letter_list:
             letter_picture = self.letter_image(each, true_type_font)
             proportion = self.prop(letter_picture[0], letter_picture[1], each)
